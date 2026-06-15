@@ -17,16 +17,13 @@ def main():
         print("Usage: clh <question to ask>")
         print("Environment variables: CLH_URL, CLH_PORT, CLH_MODEL, OPENROUTER_API_KEY, CLH_SYSTEM_PROMPT")
         sys.exit(1)
-    if URL == LOCAL_URL:
-        try:
-            # send empty request to check if local provider is online
-            response = requests.head(URL, timeout=0.5)
-        except:
-            if OPENROUTER_API_KEY != "":
-                URL = "https://openrouter.ai/api/v1/chat/completions"
-            else:
-                print("Your local server is offline. Set OPENROUTER_API_KEY for OpenRouter fallback.")
-                exit(1)
+    try:
+        # send empty request to check if local provider is online
+        requests.head(URL, timeout=0.5)
+    except:
+        if OPENROUTER_API_KEY != "":
+            URL = "https://openrouter.ai/api/v1/chat/completions"
+            print(f"Local server offline, falling back to OpenRouter...")
 
     print(f"Connecting to {URL}...")
     all_args = " ".join(sys.argv[1:])

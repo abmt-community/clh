@@ -48,12 +48,7 @@ Environment variables:
 
 ### Fallback
 
-When no custom `CLH_URL` is set, clh tries to connect to a local LLM server at `127.0.0.1:8080`. It sends a quick HEAD request to check if the server is reachable:
-
-- **Local server available** — uses it for inference.
-- **Local server offline + `OPENROUTER_API_KEY` set** — falls back to OpenRouter (`https://openrouter.ai/api/v1/chat/completions`).
-- **Local server offline + no API key** — prints an error and exits.
-
+clh tries two fallbacks when `OPENROUTER_API_KEY` is set.
 ## Requirements
 
 - Python 3.7+
