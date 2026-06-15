@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import os, requests, traceback, json, sys, subprocess, tty, termios
 
-
 def main():
     LOCAL_PORT         = int(os.environ.get("CLH_PORT", 8080))
     LOCAL_URL          = f"http://127.0.0.1:{LOCAL_PORT}/v1/chat/completions"
