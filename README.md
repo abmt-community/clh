@@ -1,4 +1,4 @@
-# clh - Command Line Helper by abmt-community
+# clh - command line helper
 
 CLI tool for asking LLMs questions and executing suggested bash commands with confirmation. Ask what you need, review the command, and run it only if you approve. Useful for discovering commands you don't know, automating repetitive shell tasks, or getting interactive help without leaving the terminal.
 
