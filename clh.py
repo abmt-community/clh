@@ -31,7 +31,7 @@ def main():
         "model": MODEL,
         "messages": message,
         "tools": TOOL_DEFS,
-        "temperature": 0.1
+        "temperature": 0.5
     }).json()
     try:
         if "error" in response:
